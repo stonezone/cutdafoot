@@ -1,0 +1,35 @@
+# Folder to watch for foot trace photos (defaults to ~/Documents/FootTraces if not set)
+watch_folder: "~/Documents/FootTraces"
+
+# Image Processing Settings - Important for laser cutting quality!
+processing:
+  # How sensitive the black/white detection is (0-255)
+  # Higher = more sensitive to light marks
+  # Lower = only picks up dark marks
+  threshold: 128
+
+  # Minimum size for a valid foot outline (helps ignore random marks/specs)
+  # Increase if picking up too many small marks
+  # Decrease if missing valid outlines
+  min_contour_area: 1000
+
+  # How smooth vs. detailed the outline should be (0.0001 to 0.01)
+  # Lower = more detailed but might be jagged
+  # Higher = smoother but might miss small details
+  simplification: 0.001
+
+# Output SVG Settings
+output:
+  # SVG line thickness in mm - CRITICAL FOR LASER CUTTING
+  # Keep this very small (0.1 to 0.5) to avoid double-cutting
+  stroke_width: 0.2
+
+  # Prefix for output files (optional)
+  file_prefix: "sole_"
+
+# Basic logging settings
+logging:
+  # Show progress in terminal? (true/false)
+  show_progress: true
+  # Save log to file? (true/false)
+  save_to_file: true

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🦶 Foot Trace Processor - The Ultimate Foot Trace to SVG Converter! 🦶</title>
+    <style>
+        @keyframes rainbow {
+            0% { color: red; }
+            33% { color: blue; }
+            66% { color: green; }
+            100% { color: red; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background: linear-gradient(45deg, #f6f8fa, #e9ecef);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1::before, h1::after {
+            content: "👣";
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .rainbow-text {
+            animation: rainbow 3s linear infinite;
+            font-weight: bold;
+        }
+
+        .blink {
+            animation: blink 1s linear infinite;
+            color: red;
+        }
+
+        .spinning-gear {
+            display: inline-block;
+            animation: spin 5s linear infinite;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h2::before {
+            content: "🔧";
+            margin-right: 10px;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Monaco, monospace;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+
+        pre::before {
+            content: "⌨️ Code:";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: #f5f5f5;
+            padding: 0 5px;
+            color: #666;
+        }
+
+        .note {
+            background: #e1f5fe;
+            padding: 15px;
+            border-left: 4px solid #03a9f4;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .warning {
+            background: #fff3e0;
+            padding: 15px;
+            border-left: 4px solid #ff9800;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .file-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .file-list li {
+            padding: 8px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .file-list li:hover {
+            transform: translateX(10px);
+            background: #e9ecef;
+        }
+
+        .file-list code {
+            display: inline-block;
+            min-width: 200px;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+
+        .cool-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cool-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .matrix-bg {
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .visitor-counter {
+            text-align: center;
+            font-family: "Digital", monospace;
+            background: #000;
+            color: #0f0;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px auto;
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Foot Trace Processor <span class="version-badge">v1.0.0</span></h1>
+        <p class="rainbow-text" style="text-align: center;">✨ Turn your foot traces into laser-ready SVGs! ✨</p>
+
+        <h2>What is This? <span class="spinning-gear">⚙️</span></h2>
+        <p>A super-cool tool for custom shoemakers and footwear enthusiasts! Takes your foot traces and magically transforms them into perfect SVG files for laser cutting. It's like having a digital cobbler in your computer! 👟</p>
+
+        <div class="note">
+            <strong>Perfect For:</strong>
+            <ul>
+                <li>Custom shoemakers</li>
+                <li>Footwear designers</li>
+                <li>Anyone needing precise foot outlines!</li>
+            </ul>
+        </div>
+
+        <h2>Package Contents</h2>
+        <ul class="file-list">
+            <li><code>FootTraceProcessor.app</code> - Your magical trace converter!</li>
+            <li><code>base_install_cli.sh</code> - For command line wizards</li>
+            <li><code>build_app.sh</code> - Create your own app potion</li>
+            <li><code>config.yaml</code> - The secret recipe book</li>
+            <li><code>foot_trace_gui.py</code> - The source of the magic</li>
+            <li><code>readme.html</code> - You're reading it! 📖</li>
+        </ul>
+
+        <h2>System Requirements <span class="blink">⚠️</span></h2>
+        <div class="matrix-bg">
+            <p>► macOS 10.14 or newer</p>
+            <p>► 2GB RAM minimum</p>
+            <p>► 100MB free disk space</p>
+            <p>► A sense of adventure! 🚀</p>
+        </div>
+
+        <h2>Quick Start Guide 🚀</h2>
+        <div class="note">
+            <strong>Option 1: The Easy Way</strong>
+            <ol>
+                <li>Double-click <code>FootTraceProcessor.app</code></li>
+                <li>Start tracing those toes! 👣</li>
+            </ol>
+        </div>
+
+        <div class="note">
+            <strong>Option 2: The Hacker Way</strong>
+            <ol>
+                <li>Open Terminal (be brave!)</li>
+                <li>Type: <code>chmod +x base_install_cli.sh</code></li>
+                <li>Then: <code>./base_install_cli.sh</code></li>
+                <li>Finally: <code>python3 foot_trace_gui.py</code></li>
+            </ol>
+        </div>
+
+        <h2>License & Legal Stuff 📜</h2>
+        <p>Released under the MIT License - do whatever you want with it! Just don't blame us if your shoes come out funny! 😅</p>
+
+        <h2>Version History</h2>
+        <ul>
+            <li><strong>v1.0.0</strong> (January 2025) - Initial release! 🎉
+                <ul>
+                    <li>Basic foot trace processing</li>
+                    <li>SVG export for LightBurn</li>
+                    <li>User-friendly GUI</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Known Issues 🐛</h2>
+        <div class="warning">
+            <ul>
+                <li>Doesn't work on ghost feet 👻</li>
+                <li>May cause addiction to custom shoe making</li>
+                <li>Not responsible for any shoe-related shopping sprees</li>
+            </ul>
+        </div>
+
+        <h2>Future Plans 🔮</h2>
+        <ul>
+            <li>Add support for dragon feet 🐉</li>
+            <li>Integrate with time travel devices</li>
+            <li>Add more blinky lights ✨</li>
+        </ul>
+
+        <h2>Credits & Thanks</h2>
+        <p>Built with ❤️ by shoe enthusiasts for shoe enthusiasts!</p>
+        <p>Special thanks to:
+            <ul>
+                <li>Coffee ☕</li>
+                <li>Late night coding sessions 🌙</li>
+                <li>Stack Overflow (obviously) 💻</li>
+            </ul>
+        </p>
+
+        <footer>
+            <p><em>Last updated: January 2025</em></p>
+            <div class="visitor-counter">Visitors: 000001</div>
+            <p class="rainbow-text">Made with 💖 and lots of ☕</p>
+            <p style="font-size: 10px;">Best viewed with Netscape Navigator</p>
+        </footer>
+    </div>
+</body>
+</html>

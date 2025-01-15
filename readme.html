@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foot Trace Processor - Setup and Usage Guide</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Monaco, monospace;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .note {
+            background: #e1f5fe;
+            padding: 10px;
+            border-left: 4px solid #03a9f4;
+            margin: 15px 0;
+        }
+        .warning {
+            background: #fff3e0;
+            padding: 10px;
+            border-left: 4px solid #ff9800;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Foot Trace Processor</h1>
+    <p>Convert foot traces to laser-cuttable SVG files for use with LightBurn.</p>
+
+    <h2>Quick Installation</h2>
+    <p>Run the install script:</p>
+    <pre><code>chmod +x install.sh
+./install.sh</code></pre>
+
+    <h2>Manual Installation</h2>
+    <p>If you prefer to install manually:</p>
+    <ol>
+        <li>Install Homebrew:
+            <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+        </li>
+        <li>Install system dependencies:
+            <pre><code>brew install python@3.11
+brew install opencv
+brew install tcl-tk</code></pre>
+        </li>
+        <li>Install Python packages:
+            <pre><code>pip3 install --user opencv-python numpy Pillow svgwrite watchdog pyyaml</code></pre>
+        </li>
+    </ol>
+
+    <h2>Running the Program</h2>
+    <ol>
+        <li>Open Terminal</li>
+        <li>Navigate to the program folder</li>
+        <li>Run: <code>python3 foot_trace_gui.py</code></li>
+    </ol>
+
+    <h2>Using the Program</h2>
+    <ol>
+        <li>Click "Open Image" to load your foot trace photo</li>
+        <li>Adjust the processing parameters:
+            <ul>
+                <li><strong>Threshold:</strong> Controls how the black/white conversion happens
+                    <br>Higher values detect lighter marks</li>
+                <li><strong>Simplification:</strong> Controls how smooth the outline is
+                    <br>Higher values create smoother but less detailed outlines</li>
+                <li><strong>SVG Stroke Width:</strong> Controls the thickness of the line
+                    <br>Keep this small (0.1-0.5) to avoid double-cutting in LightBurn</li>
+            </ul>
+        </li>
+        <li>Click "Generate SVG" to create the vector file</li>
+        <li>The SVG will be saved in the same location as your input image</li>
+    </ol>
+
+    <div class="note">
+        <h3>Tips for Best Results</h3>
+        <ul>
+            <li>Use a thick black marker for tracing</li>
+            <li>Place the paper on a contrasting surface</li>
+            <li>Ensure good lighting when taking the photo</li>
+            <li>Keep the camera parallel to the paper</li>
+            <li>Include the entire trace in the frame</li>
+            <li>For consistent sizing, always take photos from the same height</li>
+        </ul>
+    </div>
+
+    <div class="warning">
+        <h3>Troubleshooting</h3>
+        <ul>
+            <li>If no outline is detected:
+                <ul>
+                    <li>Make sure the trace is dark and clear</li>
+                    <li>Try increasing the threshold value</li>
+                    <li>Ensure good lighting in the photo</li>
+                </ul>
+            </li>
+            <li>If the outline is too detailed/jagged:
+                <ul>
+                    <li>Increase the simplification value</li>
+                    <li>Make sure the original trace is smooth</li>
+                </ul>
+            </li>
+            <li>If LightBurn shows double lines:
+                <ul>
+                    <li>Reduce the SVG stroke width</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h2>File Formats</h2>
+    <ul>
+        <li>Input: JPG, JPEG, or PNG images</li>
+        <li>Output: SVG files ready for LightBurn</li>
+    </ul>
+
+    <footer>
+        <p><em>Last updated: January 2025</em></p>
+    </footer>
+</body>
+</html>
